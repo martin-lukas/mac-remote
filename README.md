@@ -8,5 +8,6 @@ To run the server:
 
 1. Build the server: `cargo build --release`
 2. Run the binary: `./target/release/mac-remote`
+3. You can also direct the logs to a file, by adding `> debug.log` after it.
 
 The server should start on port 8050, and be accessible also via the PC's IP address (not just localhost).
