@@ -15,9 +15,11 @@ pub fn trigger_keys(keys: Vec<&str>) {
 }
 
 fn execute(script: &str) {
-    Command::new("osascript")
+    println!("{:?}", script);
+    let output = Command::new("osascript")
         .arg("-e")
         .arg(script)
         .output()
         .expect("Failed to execute command");
+    println!("{:?}", output);
 }
