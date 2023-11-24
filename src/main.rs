@@ -7,5 +7,8 @@ mod ui;
 
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/", routes![ui::index, media::endpoints])
+    let configuration = rocket::Config::figment()
+        .merge(("port", 8050))
+        .merge(("address", "0.0.0.0"));
+    rocket::custom(configuration).mount("/", routes![ui::index, media::endpoints])
 }

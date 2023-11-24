@@ -1,9 +1,12 @@
-# MacRemoteRust - control your Mac from your phone (Rust version)
+# MacRemote - control your Mac from your phone (Rust version)
 
 ## Start MacRemote on login
 
 Follow this tutorial: https://stackoverflow.com/questions/6442364/running-script-upon-login-in-mac-os-x
 
-To run the server, the current directory should be the one with `Rocket.toml` file, and then run the binary `target/release/mac-remote`.
+To run the server:
 
-This implementation consumes cca 14 MB of memory, compared the the Scala implementation running on 176 MB.
+1. Build the server: `cargo build --release`
+2. Run the binary: `./target/release/mac-remote`
+
+The server should start on port 8050, and be accessible also via the PC's IP address (not just localhost).
