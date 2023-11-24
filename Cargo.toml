@@ -1,10 +1,10 @@
 [package]
-name = "macremote"
+name = "mac-remote"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-rocket = "=0.5.0-rc.3"
+rocket = "0.5.0"
 tokio = { version = "1", features = ["full"] }
 
 [[bin]]
