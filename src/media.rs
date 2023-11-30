@@ -4,8 +4,8 @@ use crate::apple_script::trigger_keys;
 use rocket::{get, http::Status};
 
 #[get("/media/<sub_path>")]
-pub async fn endpoints(sub_path: String) -> Status {
-    match sub_path.as_str() {
+pub async fn endpoints(sub_path: &str) -> Status {
+    match sub_path {
         "maximize" => {
             trigger_keys(vec!["F"]);
             Status::Ok
