@@ -11,7 +11,7 @@ To run the server:
 
     ABSOLUTE_PATH_TO_PROJECT/target/release/mac-remote > ABSOLUTE_PATH_TO_LOG_DIR/debug.log
     ```
-5. Make the script executable, e.g. `chmod +x mac-remote`
+5. Make the script executable, e.g. `chmod +x macremote`
 6. Add the directory the script above is in to `PATH` env. variable.
 
 The server itself should start on port 8050, and be accessible also via the PC's IP address (not just localhost) on the lcoal network.

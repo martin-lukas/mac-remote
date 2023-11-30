@@ -3,7 +3,7 @@
 use rocket::{get, response::content::RawHtml};
 use std::io::Error;
 
-#[get("/ui")]
+#[get("/")]
 pub async fn index() -> Result<RawHtml<String>, Error> {
     Ok(RawHtml(
         r#"<!DOCTYPE html>
