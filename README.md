@@ -12,10 +12,10 @@ To run the server:
 1. Build the server: `cargo build --release`
 2. Run the binary: `./target/release/macremote`
 3. You can also direct the logs to a file, by adding `> debug.log` after it.
-4. The server should now be running on port `8050`, with the UI accessible on:
-    - [http://127.0.0.1:8050](http://127.0.0.1:8050)
-    - [http://0.0.0.0:8050](http://0.0.0.0:8050)
-    - The laptop's local IP address (in MacOS, run `ifconfig 'en0' | grep 'inet '`).
+4. The server should now be running on port `8000`, with the UI accessible on:
+    - [http://127.0.0.1:8000](http://127.0.0.1:8000)
+    - [http://0.0.0.0:8000](http://0.0.0.0:8000)
+    - The laptop's local IP address (in MacOS, run `ifconfig 'en0' | grep 'inet '`) + the port.
 5. If you want to make this IP stable, you should configure your router to assign
    a stable IP address to that laptop. Then you can bookmark it on your phone for easy access.
 
