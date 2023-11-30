@@ -2,6 +2,5 @@
 .vscode/
 .idea/
 target/
-debug.log
-
-MacRemoteRust.app
+/debug.log
+/mac-remote
