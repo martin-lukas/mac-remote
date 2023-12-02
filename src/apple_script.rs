@@ -1,17 +1,21 @@
 use std::process::{Command, Output};
 
-pub fn trigger_keys(keys: Vec<&str>) {
-    println!("Triggering keys: {}", keys.join(", "));
-    for key in keys {
-        match key {
-            "F" => execute("tell application \"System Events\" to keystroke \"f\""),
-            "SPACE" => execute("tell application \"System Events\" to keystroke space"),
-            "LEFT" => execute("tell application \"System Events\" to key code 123"),
-            "RIGHT" => execute("tell application \"System Events\" to key code 124"),
-            "DOWN" => execute("tell application \"System Events\" to key code 125"),
-            "UP" => execute("tell application \"System Events\" to key code 126"),
-            _ => panic!("Unsupported keys were triggered: {}", key),
+pub fn trigger_keys(keys: &str) {
+    println!("Triggering key(s): {}", keys);
+    match keys {
+        "CMD+DOWN" => {
+            execute("tell application \"System Events\" to key code 125 using command down")
         }
+        "CMD+Q" => {
+            execute("tell application \"System Events\" to keystroke \"q\" using command down")
+        }
+        "F" => execute("tell application \"System Events\" to keystroke \"f\""),
+        "SPACE" => execute("tell application \"System Events\" to keystroke space"),
+        "LEFT" => execute("tell application \"System Events\" to key code 123"),
+        "RIGHT" => execute("tell application \"System Events\" to key code 124"),
+        "DOWN" => execute("tell application \"System Events\" to key code 125"),
+        "UP" => execute("tell application \"System Events\" to key code 126"),
+        _ => panic!("Unsupported keys were triggered: {}", keys),
     }
 }
 
