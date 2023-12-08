@@ -5,6 +5,17 @@
 - Consists of a web server running on your laptop, which will make a Web UI accessible on the laptop's local IP address, to be able to access it e.g. on your phone connected to the same network.
 - Written in Rust for performance and low RAM usage (just a few MBs).
 
+![MacRemote UI](images/macremote-ui.png)
+
+Current functionality is mostly focused on media controls:
+
+- Open: triggers `CMD+DOWN` for opening a file
+- Close: triggers `CMD+Q` for closing a media player
+- MX: triggers `F` to maximize a video
+- II: triggers `SPACE` to play/pause a video
+- Arrows Up/Down: trigger arrows, usually to control volume
+- Arrows Left/Right: trigger arrows, usually to seek backwards and forwards
+
 ## Run locally
 
 To run the server:
@@ -17,18 +28,21 @@ To run the server:
     - [http://0.0.0.0:8000](http://0.0.0.0:8000)
     - The laptop's local IP address (in MacOS, run `ifconfig 'en0' | grep 'inet '`) + the port.
 5. If you want to make this IP stable, you should configure your router to assign
-   a stable IP address to that laptop. Then you can bookmark it on your phone for easy access.
+   a stable IP address to the device the MacRemote server is running on. Then you can bookmark it on your phone for easy access.
 
 ## Create a launch script
 
-You can create a simple bash script for launching the server from anywhere in terminal
+The easiest way to launch MacRemote is via a simple bash script, from anywhere in terminal:
 
-1. Create a new file with:
+1. Create a new file, which you can name `macremote`:
     ```sh
     #!/bin/bash
+    echo "Access MacRemote on http://$(ifconfig 'en0' | grep 'inet ' | sed 's/^.*inet \([0-9\.]*\) .*/\1/'):8000"
     ABSOLUTE_PATH_TO_PROJECT/target/release/macremote > ABSOLUTE_PATH_TO_LOG_DIR/debug.log
     ```
-5. Make the script executable: `chmod +x macremote`
-6. The folder the script is in should be added to the `PATH` env. variable for easy execution from anywhere in a terminal, with just `macremote`
+
+    (replace `ABSOLUTE_PATH_TO_PROJECT` with path where you cloned this repository)
+2. Make the script executable: `chmod +x macremote`
+3. The folder the script is in should be added to the `PATH` environment variable for easy execution from anywhere in a terminal, with just `macremote`
 
 
