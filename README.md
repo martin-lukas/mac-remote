@@ -5,7 +5,9 @@
 - Consists of a web server running on your laptop, which will make a Web UI accessible on the laptop's local IP address, to be able to access it e.g. on your phone connected to the same network.
 - Written in Rust for performance and low RAM usage (just a few MBs).
 
-![MacRemote UI](images/macremote-ui.png)
+<p align="center" width="100%">
+    <img src="images/macremote-ui.png" alt="MacRemote UI" width="300"/>
+</p>
 
 Current functionality is mostly focused on media controls:
 
