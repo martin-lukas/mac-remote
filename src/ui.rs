@@ -47,7 +47,7 @@ pub async fn index() -> Result<RawHtml<String>, Error> {
           .divider {
             background-color: #ffd700;
             height: 3px;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
           }
         
           .buttons {
