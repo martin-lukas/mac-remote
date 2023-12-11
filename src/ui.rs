@@ -37,9 +37,7 @@ pub async fn index() -> Result<RawHtml<String>, Error> {
           }
         
           .small-button {
-            font-size: 1.3em;
-            margin-left: 45px;
-            margin-right: 45px;
+            font-size: 1.0em;
             color: #ffd700;
             text-decoration: none;
           }
@@ -74,8 +72,12 @@ pub async fn index() -> Result<RawHtml<String>, Error> {
         
         <body>
           <div class="banner">
-            <a href="/media/open" onclick="sendRequest(event)" class="small-button">&#x1F50D;</a>
-            <a href="/media/close" onclick="sendRequest(event)" class="small-button">&#x274C;</a>
+            <a href="/media/lefttab" onclick="sendRequest(event)" class="small-button">&#5130;</a>
+            <a href="/media/righttab" onclick="sendRequest(event)" class="small-button">&#5125;</a>
+            <a href="/media/closetab" onclick="sendRequest(event)" class="small-button">&#10006;</a>
+            <a href="/media/changewindow" onclick="sendRequest(event)" class="small-button">&#128260;</a>
+            <a href="/media/openfile" onclick="sendRequest(event)" class="small-button">&#x1F50D;</a>
+            <a href="/media/closewindow" onclick="sendRequest(event)" class="small-button">&#x274C;</a>
           </div>
           <div class="divider"></div>
           <div class="buttons">

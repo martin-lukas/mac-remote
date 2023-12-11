@@ -6,11 +6,27 @@ use rocket::{get, http::Status};
 #[get("/media/<sub_path>")]
 pub async fn endpoints(sub_path: &str) -> Status {
     match sub_path {
-        "open" => {
+        "lefttab" => {
+            trigger_keys("OPT+CMD+LEFT");
+            Status::Ok
+        }
+        "righttab" => {
+            trigger_keys("OPT+CMD+RIGHT");
+            Status::Ok
+        }
+        "closetab" => {
+            trigger_keys("CMD+W");
+            Status::Ok
+        }
+        "changewindow" => {
+            trigger_keys("OPT+`");
+            Status::Ok
+        }
+        "openfile" => {
             trigger_keys("CMD+DOWN");
             Status::Ok
         }
-        "close" => {
+        "closewindow" => {
             trigger_keys("CMD+Q");
             Status::Ok
         }

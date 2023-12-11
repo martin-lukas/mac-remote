@@ -3,6 +3,18 @@ use std::process::{Command, Output};
 pub fn trigger_keys(keys: &str) {
     println!("Triggering key(s): {}", keys);
     match keys {
+        "OPT+CMD+LEFT" => execute(
+            "tell application \"System Events\" to key code 123 using {option down, command down}",
+        ),
+        "OPT+CMD+RIGHT" => execute(
+            "tell application \"System Events\" to key code 124 using {option down, command down}",
+        ),
+        "CMD+W" => {
+            execute("tell application \"System Events\" to keystroke \"w\" using command down")
+        }
+        "OPT+`" => {
+            execute("tell application \"System Events\" to keystroke \"`\" using option down")
+        }
         "CMD+DOWN" => {
             execute("tell application \"System Events\" to key code 125 using command down")
         }
