@@ -1,6 +1,6 @@
 #![allow(unused_attributes)]
 
-use crate::apple_script::trigger_keys;
+use crate::commands::trigger_keys;
 use rocket::{get, http::Status};
 
 #[get("/media/<sub_path>")]
